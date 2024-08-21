@@ -8,7 +8,7 @@ const HeroSection = () => {
     <section className="bg-[#F3F4F6] py-12 lg:py-24 flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between">
       <div className="lg:w-1/2 px-4 lg:px-6 text-center lg:text-left lg:ml-12">
         <h1 className="text-3xl lg:text-5xl font-bold text-[#7152F3] mb-4">
-          <span className="text-[#A3D139]">Elevate</span> Your Team's Onboarding Experience with <span className="text-[#A3D139]">OnboardingPro</span>
+          <span className="text-[#88A52A]">Elevate</span> Your Team's Onboarding Experience with <span className="text-[#A3D139]">OnboardingPro</span>
         </h1>
         <p className="text-lg lg:text-xl text-gray-700 mb-6">
           Simplify and enhance your employee integration process with our cutting-edge platform. Efficient, intuitive, and effective.
