@@ -27,7 +27,7 @@ const howItWorksSteps = [
     description: 'Interact with team members and complete your onboarding tasks.',
     icon: (
       <svg className="w-12 h-12 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2v-2z"/>
       </svg>
     ),
   },
@@ -55,17 +55,26 @@ const howItWorksSteps = [
 
 const HowItWorks = () => {
   return (
-    <section className="py-12 bg-gray-100">
-      <div className="max-w-screen-xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">How It Works</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-4xl mx-auto px-6">
+        <h2 className="text-4xl font-extrabold text-center mb-12 text-gray-800">How It Works</h2>
+        <div className="relative">
+          <div className="absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-px bg-dotted border-dotted border-gray-300"></div>
           {howItWorksSteps.map((step, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center justify-center mb-4">
+            <div
+              key={index}
+              className={`flex items-start ${index % 2 === 0 ? 'justify-start' : 'justify-end'} mb-12 relative`}
+            >
+              <div className={`w-12 h-12 bg-white rounded-full border-4 border-gray-300 flex items-center justify-center shadow-lg`}>
                 {step.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-2">Step {step.step}: {step.title}</h3>
-              <p className="text-gray-600">{step.description}</p>
+              <div className={`ml-6 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
+                <h3 className="text-xl font-semibold text-gray-700 mb-2">Step {step.step}: {step.title}</h3>
+                <p className="text-gray-600">{step.description}</p>
+              </div>
+              <div className={`absolute ${index % 2 === 0 ? '-left-6' : '-right-6'} top-1/2 transform -translate-y-1/2`}>
+                {step.icon}
+              </div>
             </div>
           ))}
         </div>

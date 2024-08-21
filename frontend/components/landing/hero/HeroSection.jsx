@@ -5,10 +5,10 @@ import HeroImage from '../../../assets/img/heero.png';
 
 const HeroSection = () => {
   return (
-    <section className="bg-[#F3F4F6] py-12 lg:py-24 flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between">
+    <section className="py-12 lg:py-24 flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-between">
       <div className="lg:w-1/2 px-4 lg:px-6 text-center lg:text-left lg:ml-12">
-        <h1 className="text-3xl lg:text-5xl font-bold text-[#7152F3] mb-4">
-          <span className="text-[#88A52A]">Elevate</span> Your Team's Onboarding Experience with <span className="text-[#A3D139]">OnboardingPro</span>
+        <h1 className="text-3xl lg:text-5xl font-bold text-[#4F31D0] mb-4">
+          <span className="text-[#88A52A]">Elevate</span> Your Team's Onboarding Experience with <span className="text-[#88A52A]">OnboardingPro</span>
         </h1>
         <p className="text-lg lg:text-xl text-gray-700 mb-6">
           Simplify and enhance your employee integration process with our cutting-edge platform. Efficient, intuitive, and effective.
@@ -16,13 +16,13 @@ const HeroSection = () => {
         <div className="flex flex-col lg:flex-row items-center lg:items-start space-y-4 lg:space-y-0 lg:space-x-4">
           <a
             href="#register"
-            className="bg-[#A3D139] text-white font-semibold py-3 px-6 rounded-lg hover:bg-[#8bb636] transition"
+            className="bg-[#88A52A] text-white font-semibold py-3 px-6 rounded-lg hover:bg-[#8bb636] transition"
           >
             Get Started
           </a>
           <a
             href="#learn-more"
-            className="bg-transparent text-[#7152F3] border border-[#7152F3] font-semibold py-3 px-6 rounded-lg hover:bg-[#7152F3] hover:text-white transition"
+            className="bg-transparent text-[#4F31D0] border border-[#4F31D0] font-semibold py-3 px-6 rounded-lg hover:bg-[#7152F3] hover:text-white transition"
           >
             Learn More
           </a>
