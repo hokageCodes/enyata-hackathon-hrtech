@@ -105,7 +105,7 @@ const Navbar = () => {
             <li>
               <a
                 href="#register"
-                className="block py-2 px-3 text-white bg-[#A3D139] rounded hover:bg-[#8bb636] md:p-0"
+                className="block h-8 w-24 text-center flex items-center justify-center text-white bg-[#88A52A] rounded hover:bg-[#8bb636] md:p-0"
               >
                 Register
               </a>

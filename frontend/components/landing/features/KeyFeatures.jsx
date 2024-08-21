@@ -1,72 +1,85 @@
 import React from 'react';
+import { FaCogs, FaUsersCog, FaChartLine, FaUserAlt, FaHandshake } from 'react-icons/fa';
 
-const features = [
-  {
-    title: 'Streamlined Processes',
-    description: 'Automate repetitive tasks to save time and reduce errors.',
-    icon: (
-      <svg className="w-12 h-12 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M10 3h4v4h-4V3zm0 8h4v4h-4v-4zM3 10h4v4H3v-4zm0 8h4v4H3v-4zm14 0h4v4h-4v-4zm0-8h4v4h-4v-4z"/>
-      </svg>
-    ),
-  },
-  {
-    title: 'Consistent Onboarding',
-    description: 'Standardize procedures across departments for a seamless experience.',
-    icon: (
-      <svg className="w-12 h-12 text-green-500" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M5 5h14v14H5V5zm7 7h2v2h-2v-2zm0-4h2v2h-2V8z"/>
-      </svg>
-    ),
-  },
-  {
-    title: 'Progress Tracking',
-    description: 'Monitor new hires’ progress and ensure engagement with real-time updates.',
-    icon: (
-      <svg className="w-12 h-12 text-yellow-500" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
-      </svg>
-    ),
-  },
-  {
-    title: 'Personalized Experience',
-    description: 'Tailor onboarding content to individual needs for a more engaging experience.',
-    icon: (
-      <svg className="w-12 h-12 text-red-500" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
-      </svg>
-    ),
-  },
-  {
-    title: 'Enhanced Interaction',
-    description: 'Facilitate early interaction with team members and mentors to build connections.',
-    icon: (
-      <svg className="w-12 h-12 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
-      </svg>
-    ),
-  },
-];
+export default function SharedValues() {
+  const values = [
+    {
+      title: 'Streamlined Processes',
+      description: 'Automate repetitive tasks to save time and reduce errors.',
+      icon: (
+        <FaCogs className="w-12 h-12 text-[#5E60CE]" />
+      ),
+    },
+    {
+      title: 'Consistent Onboarding',
+      description: 'Standardize procedures across departments for a seamless experience.',
+      icon: (
+        <FaUsersCog className="w-12 h-12 text-[#82D973]" />
+      ),
+    },
+    {
+      title: 'Progress Tracking',
+      description: 'Monitor new hires’ progress and ensure engagement with real-time updates.',
+      icon: (
+        <FaChartLine className="w-12 h-12 text-[#FF7E79]" />
+      ),
+    },
+    {
+      title: 'Personalized Experience',
+      description: 'Tailor onboarding content to individual needs for a more engaging experience.',
+      icon: (
+        <FaUserAlt className="w-12 h-12 text-[#B5179E]" />
+      ),
+    },
+    {
+      title: 'Enhanced Interaction',
+      description: 'Facilitate early interaction with team members and mentors to build connections.',
+      icon: (
+        <FaHandshake className="w-12 h-12 text-[#4361EE]" />
+      ),
+    },
+  ];
 
-const KeyFeatures = () => {
   return (
-    <section className="py-12 bg-gray-100">
-      <div className="max-w-screen-xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">Our Key Features</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-          {features.map((feature, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-              <div className="flex items-center justify-center mb-4">
-                {feature.icon}
+    <div className="container relative flex flex-col justify-between h-full max-w-6xl px-10 mx-auto xl:px-0 mt-5">
+      <h2 className="mb-1 text-4xl font-bold leading-tight text-[#4F31D0]">Our Key Features</h2>
+      <p className="mb-12 text-lg text-gray-500">Here are a few of the core values that define our firm.</p>
+      <div className="w-full">
+        <div className="flex flex-col w-full mb-10 sm:flex-row">
+          {values.slice(0, 2).map((value, index) => (
+            <div className="w-full mb-10 sm:mb-0 sm:w-1/2" key={index}>
+              <div className="relative h-full ml-0 mr-0 sm:mr-10">
+                <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-[#88A52A] rounded-lg"></span>
+                <div className="relative h-full p-5 bg-white border-2 border-[#88A52A] rounded-lg">
+                  <div className="flex items-center -mt-1">
+                    {value.icon}
+                    <h3 className="my-2 ml-3 text-lg font-bold text-[#4F31D0]">{value.title}</h3>
+                  </div>
+                  <p className="mt-3 mb-1 text-xs font-medium text-[#3A0CA3] uppercase">------------</p>
+                  <p className="mb-2 text-gray-600">{value.description}</p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+        <div className="flex flex-col w-full mb-5 sm:flex-row">
+          {values.slice(2).map((value, index) => (
+            <div className="w-full mb-10 sm:mb-0 sm:w-1/2" key={index + 2}>
+              <div className="relative h-full ml-0 mr-0 sm:mr-10">
+                <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-[#88A52A] rounded-lg"></span>
+                <div className="relative h-full p-5 bg-white border-2 border-[#88A52A] rounded-lg">
+                  <div className="flex items-center -mt-1">
+                    {value.icon}
+                    <h3 className="my-2 ml-3 text-lg font-bold text-[#4F31D0]">{value.title}</h3>
+                  </div>
+                  <p className="mt-3 mb-1 text-xs font-medium text-[#3A0CA3] uppercase">------------</p>
+                  <p className="mb-2 text-gray-600">{value.description}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
-};
-
-export default KeyFeatures;
+}
