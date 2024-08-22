@@ -1,7 +1,8 @@
 import React from 'react'
 import { MdOutlineDarkMode } from "react-icons/md";
+import { GiHamburgerMenu } from 'react-icons/gi'
 
-const Header = () => {
+const Header = ({ isOpen, handleNav }) => {
 
   const getTimeOfDay = () => {
     return new Date().getHours() < 12 ? 
@@ -18,8 +19,13 @@ const Header = () => {
         </div>
 
         <div>
-          <MdOutlineDarkMode className='w-[30px] h-[40px]' />
-        </div>
+          <div className='flex cursor-pointer'>
+              <MdOutlineDarkMode className='w-[30px] h-[40px] m-1' />
+              {!isOpen && (
+                <GiHamburgerMenu onClick={handleNav} className='duration-300 block md:hidden w-[30px] h-[40px] m-1 text-[#7152F3]' aria-hidden="true" />
+              )}
+          </div>
+          </div>
       </div>
     </div>
   )
