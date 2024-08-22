@@ -1,4 +1,15 @@
-import React from 'react';
+"use client"
+import React, { Suspense } from 'react';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+import { motion } from 'framer-motion';
+
+// Define animation variants
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 }
+};
+
 
 const howItWorksSteps = [
   {
@@ -53,29 +64,67 @@ const howItWorksSteps = [
   },
 ];
 
+const PlaceholderCard = () => (
+  <div className="flex flex-col md:flex-row items-start mb-12 relative">
+    {/* Icon placeholder */}
+    <div className="flex items-center mb-4 md:hidden">
+      <div className="w-12 h-12 bg-white rounded-full border-4 border-gray-300 flex items-center justify-center shadow-lg">
+        <Skeleton circle height={48} width={48} />
+      </div>
+    </div>
+    
+    {/* Text content placeholders */}
+    <div className="flex-1">
+      <Skeleton height={24} width={150} />
+      <Skeleton height={16} width={250} count={3} />
+    </div>
+    
+    {/* Icon placeholder for desktop view */}
+    <div className="hidden md:flex md:items-center md:ml-6 md:w-12 md:h-12">
+      <div className="w-12 h-12 bg-white rounded-full border-4 border-gray-300 flex items-center justify-center shadow-lg">
+        <Skeleton circle height={48} width={48} />
+      </div>
+    </div>
+  </div>
+);
+
 const HowItWorks = () => {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16">
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-4xl font-extrabold text-center mb-12 text-gray-800">How It Works</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-[#4F31D0]">How It Works</h2>
         <div className="relative">
-          <div className="absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-px bg-dotted border-dotted border-gray-300"></div>
+          <div className="absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-px bg-dotted border-dotted border-gray-300 hidden md:block"></div>
           {howItWorksSteps.map((step, index) => (
-            <div
-              key={index}
-              className={`flex items-start ${index % 2 === 0 ? 'justify-start' : 'justify-end'} mb-12 relative`}
-            >
-              <div className={`w-12 h-12 bg-white rounded-full border-4 border-gray-300 flex items-center justify-center shadow-lg`}>
-                {step.icon}
-              </div>
-              <div className={`ml-6 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
-                <h3 className="text-xl font-semibold text-gray-700 mb-2">Step {step.step}: {step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
-              </div>
-              <div className={`absolute ${index % 2 === 0 ? '-left-6' : '-right-6'} top-1/2 transform -translate-y-1/2`}>
-                {step.icon}
-              </div>
-            </div>
+            <Suspense fallback={<PlaceholderCard />} key={index}>
+              <motion.div
+                variants={fadeInUp}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className={`flex flex-col md:flex-row items-start ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'} mb-12 relative`}
+              >
+                {/* Icon for mobile view */}
+                <div className="flex items-center mb-4 md:hidden">
+                  <div className="w-12 h-12 bg-white rounded-full border-4 border-gray-300 flex items-center justify-center shadow-lg">
+                    {step.icon}
+                  </div>
+                </div>
+                
+                {/* Text content */}
+                <div className={`flex-1 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
+                  <h3 className="text-xl font-semibold text-[#4F31D0] mb-2">Step {step.step}: {step.title}</h3>
+                  <p className="text-gray-600">{step.description}</p>
+                </div>
+                
+                {/* Icon for desktop view */}
+                <div className="hidden md:flex md:items-center md:ml-6 md:w-12 md:h-12">
+                  <div className="w-12 h-12 bg-white rounded-full border-4 border-gray-300 flex items-center justify-center shadow-lg">
+                    {step.icon}
+                  </div>
+                </div>
+              </motion.div>
+            </Suspense>
           ))}
         </div>
       </div>
