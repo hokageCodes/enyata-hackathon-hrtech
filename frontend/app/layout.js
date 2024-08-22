@@ -1,7 +1,5 @@
 import { Syne } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/landing/navbar/Navbar";
-import Footer from "@/components/landing/footer/Footer";
 
 const syne = Syne({ subsets: ["latin"] });
 
@@ -14,9 +12,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={syne.className}>
-        <Navbar />
+
         {children}
-        <Footer />
+
       </body>
     </html>
   );
