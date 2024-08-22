@@ -70,7 +70,6 @@ const HowItWorks = () => {
         <div className="relative">
           <div className="absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-px bg-dotted border-dotted border-gray-300 hidden md:block"></div>
           {howItWorksSteps.map((step, index) => (
-            <Suspense fallback={<PlaceholderCard />} key={index}>
               <motion.div
                 variants={fadeInUp}
                 initial="hidden"
@@ -98,7 +97,6 @@ const HowItWorks = () => {
                   </div>
                 </div>
               </motion.div>
-            </Suspense>
           ))}
         </div>
       </div>

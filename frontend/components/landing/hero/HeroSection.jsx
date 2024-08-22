@@ -16,7 +16,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <span className="text-[#88A52A]">Elevate</span> Your Team's Onboarding Experience with <span className="text-[#88A52A]">OnboardingPro</span>
+          <span className="text-[#88A52A]">Elevate</span> Your Team&#39;s Onboarding Experience with <span className="text-[#88A52A]">OnboardingPro</span>
         </motion.h1>
         <motion.p
           className="text-lg lg:text-xl text-gray-700 mb-6"
