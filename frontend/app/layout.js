@@ -12,9 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={syne.className}>
-
         {children}
-
       </body>
     </html>
   );
