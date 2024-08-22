@@ -65,7 +65,6 @@ const HeroSection = () => {
               className="rounded-lg shadow-lg"
             />
           </motion.div>
-        </Suspense>
       </div>
     </section>
   );
