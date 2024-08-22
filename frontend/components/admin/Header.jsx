@@ -10,7 +10,7 @@ const Header = () => {
 };
   
   return (
-    <div className='shadow-md h-[4rem]'>
+    <div className='shadow-md h-[4rem] bg-[#fdfdfd]'>
       <div className='flex justify-between items-center py-2 px-4'>
         <div>
           <h1 className='font-semibold'>Hello Admin!</h1>

@@ -9,7 +9,7 @@ const AdminDashboardLayout = ({ children }) => {
             <AdminSiderbar />
         </div>
         <div className="flex-grow md:overflow-y-auto">
-            <div>
+            <div className='sticky top-0'>
                 <Header />
             </div>
                 <div className="p-4">{ children }</div>
