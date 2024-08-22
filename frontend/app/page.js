@@ -7,6 +7,7 @@ import Image from "next/image";
 import Footer from "@/components/landing/footer/Footer";
 import Navbar from "@/components/landing/navbar/Navbar";
 import FAQsSection from "@/components/landing/faqs/FAQsSection";
+import MultiStepForm from "@/components/landing/register/RegisterCompany";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <OurKeyFeatures />
       <HowItWorks />
       <Pricing />
+      <MultiStepForm />
       <FAQsSection />
       <Footer />
     </>
