@@ -62,30 +62,6 @@ const howItWorksSteps = [
   },
 ];
 
-const PlaceholderCard = () => (
-  <div className="flex flex-col md:flex-row items-start mb-12 relative">
-    {/* Icon placeholder */}
-    <div className="flex items-center mb-4 md:hidden">
-      <div className="w-12 h-12 bg-white rounded-full border-4 border-gray-300 flex items-center justify-center shadow-lg">
-        <Skeleton circle height={48} width={48} />
-      </div>
-    </div>
-    
-    {/* Text content placeholders */}
-    <div className="flex-1">
-      <Skeleton height={24} width={150} />
-      <Skeleton height={16} width={250} count={3} />
-    </div>
-    
-    {/* Icon placeholder for desktop view */}
-    <div className="hidden md:flex md:items-center md:ml-6 md:w-12 md:h-12">
-      <div className="w-12 h-12 bg-white rounded-full border-4 border-gray-300 flex items-center justify-center shadow-lg">
-        <Skeleton circle height={48} width={48} />
-      </div>
-    </div>
-  </div>
-);
-
 const HowItWorks = () => {
   return (
     <section className="py-16">

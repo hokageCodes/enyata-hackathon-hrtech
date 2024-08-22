@@ -52,7 +52,6 @@ const HeroSection = () => {
         </div>
       </div>
       <div className="lg:w-1/2 mt-8 lg:mt-0 px-4 flex justify-center lg:justify-end">
-        <Suspense fallback={<Skeleton height={500} width={500} className="rounded-lg shadow-lg" />}>
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}

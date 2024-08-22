@@ -40,21 +40,17 @@ const values = [
   },
 ];
 
-// Placeholder for skeleton loading
 const PlaceholderCard = () => (
   <div className="w-full mb-10 sm:mb-0 sm:w-1/2">
     <div className="relative h-full ml-0 mr-0 sm:mr-10">
       <span className="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-[#4F31D0] rounded-lg"></span>
       <div className="relative h-full p-5 bg-white border-2 border-[#4F31D0] rounded-lg">
         <div className="flex items-center -mt-1">
-          <Skeleton circle height={48} width={48} />
           <div className="ml-3">
-            <Skeleton width={150} />
             <div className="my-2 text-lg font-bold text-[#4F31D0]"></div>
           </div>
         </div>
         <p className="mt-3 mb-1 text-xs font-medium text-[#3A0CA3] uppercase">------------</p>
-        <Skeleton count={3} />
       </div>
     </div>
   </div>
