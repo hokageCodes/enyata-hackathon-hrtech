@@ -6,6 +6,7 @@ import Pricing from "@/components/landing/pricing/Pricing";
 import Image from "next/image";
 import Footer from "@/components/landing/footer/Footer";
 import Navbar from "@/components/landing/navbar/Navbar";
+import FAQsSection from "@/components/landing/faqs/FAQsSection";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <OurKeyFeatures />
       <HowItWorks />
       <Pricing />
+      <FAQsSection />
       <Footer />
     </>
   );
