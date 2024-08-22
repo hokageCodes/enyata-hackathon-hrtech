@@ -1,7 +1,5 @@
 "use client";
 import React, { Suspense, lazy } from "react";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
 import { motion } from "framer-motion";
 import HeroImage from '../../../assets/img/heero.png';
 
