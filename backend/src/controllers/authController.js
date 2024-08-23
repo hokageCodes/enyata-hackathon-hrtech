@@ -39,7 +39,8 @@ const loginUser = async (req, res) => {
             name: user.fullname,
             username: user.username,
             email: user.email,
-            role: user.role
+            role: user.role,
+            company: user.company
         };
         const token = generateToken(payload);
         const refreshToken = generateRefreshToken(payload);
@@ -124,7 +125,8 @@ const refreshToken = async (req, res) => {
             name: user.fullname,
             username: user.username,
             email: user.email,
-            role: user.role
+            role: user.role,
+            company: user.company
         };
 
         const newToken = generateToken(payload);

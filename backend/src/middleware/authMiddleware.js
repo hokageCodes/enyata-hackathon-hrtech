@@ -42,14 +42,14 @@ const authMiddleware = async (req, res, next) => {
 };
 
 const isAdmin = (req, res, next) => {
-  if (!req.user || (req.user.role !== "admin")) {
+  if (!req.user && (req.user.role !== "admin" || req.user.role === 'superadmin')) {
     return res.status(403).json({ msg: "Forbidden - Admin access required" });
   }
   next();
 };
 
 const isHR = (req, res, next) => {
-  if (!req.user || (req.user.role !== "manager")) {
+  if (!req.user && (req.user.role !== "manager" || req.user.role !== "admin" || req.user.role === 'superadmin')) {
     return res.status(403).json({ msg: "Forbidden - HR access required" });
   }
   next();
