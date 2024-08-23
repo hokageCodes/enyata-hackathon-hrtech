@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react'
+import React from 'react'
 import { 
   MdOutlineDashboard,
   MdOutlinePeopleAlt,
@@ -14,7 +14,7 @@ import Link from 'next/link';
 import Logo from '@/assets/svgs/logo.svg'
 import Image from 'next/image';
 
-const AdminSiderbar = ({ isOpen, handleNav }) => {
+const SuperAdminSiderbar = ({ isOpen, handleNav }) => {
 
   const pathname = usePathname()
 
@@ -45,14 +45,14 @@ const AdminSiderbar = ({ isOpen, handleNav }) => {
           <div className={isActive('/admin/employees') ? 'active text-[#7152F3] bg-[#e5e2fc] h-[40px] py-1.5 px-4 rounded-tr-lg rounded-br-lg border-l-2 border-[#7152F3] cursor-pointer' : ''}>
             <Link href='/admin/employees' className='flex items-center gap-2 cursor-pointer'>
               <MdOutlinePeopleAlt className='text-lg' />
-              <h1>All Employees</h1>
+              <h1>All Admins</h1>
             </Link>
           </div>
 
           <div className={isActive('/admin/department') ? 'active text-[#7152F3] bg-[#e5e2fc] h-[40px] py-1.5 px-4 rounded-tr-lg rounded-br-lg border-l-2 border-[#7152F3] cursor-pointer' : ''}>
             <Link href='/admin/department' className='flex items-center gap-2 cursor-pointer'>
               <GoOrganization className='text-lg' />
-              <h1>All Departments</h1>
+              <h1>All Companies</h1>
             </Link>
           </div>
 
@@ -107,14 +107,14 @@ const AdminSiderbar = ({ isOpen, handleNav }) => {
             <div className={isActive('/admin/employees') ? 'active text-[#7152F3] bg-[#e5e2fc] h-[40px] py-1.5 px-4 rounded-tr-lg rounded-br-lg border-l-2 border-[#7152F3] cursor-pointer' : ''}>
               <Link href='/admin/employees' className='flex items-center gap-2 cursor-pointer'>
                 <MdOutlinePeopleAlt className='text-lg' />
-                <h1>All Employees</h1>
+                <h1>All Admins</h1>
               </Link>
             </div>
 
             <div className={isActive('/admin/department') ? 'active text-[#7152F3] bg-[#e5e2fc] h-[40px] py-1.5 px-4 rounded-tr-lg rounded-br-lg border-l-2 border-[#7152F3] cursor-pointer' : ''}>
               <Link href='/admin/department' className='flex items-center gap-2 cursor-pointer'>
                 <GoOrganization className='text-lg' />
-                <h1>All Departments</h1>
+                <h1>All Companies</h1>
               </Link>
             </div>
 
@@ -139,4 +139,4 @@ const AdminSiderbar = ({ isOpen, handleNav }) => {
   )
 }
 
-export default AdminSiderbar
+export default SuperAdminSiderbar

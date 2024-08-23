@@ -14,7 +14,7 @@ import Link from 'next/link';
 import Logo from '@/assets/svgs/logo.svg'
 import Image from 'next/image';
 
-const AdminSiderbar = ({ isOpen, handleNav }) => {
+const HrSiderbar = ({ isOpen, handleNav }) => {
 
   const pathname = usePathname()
 
@@ -139,4 +139,4 @@ const AdminSiderbar = ({ isOpen, handleNav }) => {
   )
 }
 
-export default AdminSiderbar
+export default HrSiderbar
