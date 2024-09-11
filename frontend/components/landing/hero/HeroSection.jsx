@@ -42,7 +42,7 @@ const Hero = () => {
           animate={inView ? 'visible' : 'hidden'}
         >
           <h1 className="text-[32px] sm:text-[40px] md:text-[48px] font-semibold leading-[38px] sm:leading-[50px] md:leading-[58px] tracking-[-1.8px] text-center font-montserrat">
-            Your Team's{' '}
+            Your Team&#39;s{' '}
             <span className="text-[#FF7380]">Onboarding Experience</span>
           </h1>
 

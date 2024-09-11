@@ -50,7 +50,7 @@ const MultiStepForm = () => {
         <div className="flex-1 p-8 bg-gray-50 rounded-l-xl">
           <h1 className="text-3xl font-bold text-gray-800 mb-4">Business Information Form</h1>
           <p className="text-gray-600 mb-4">
-            Welcome to the Business Information Form. This multi-step form is designed to collect comprehensive details about your business. Please follow the steps below to provide all the required information. You can navigate through the steps using the "Previous" and "Next" buttons.
+            Welcome to the Business Information Form. This multi-step form is designed to collect comprehensive details about your business. Please follow the steps below to provide all the required information. You can navigate through the steps using the Previous and Next buttons.
           </p>
           <Stepper step={step} />
         </div>
