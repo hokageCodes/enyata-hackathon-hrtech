@@ -1,64 +1,44 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
+import Image from 'next/image';
+import PricingImg from '../../../assets/img/pricing.png';
 
-const textVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
-const buttonVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.5, delay: 0.4 } },
-};
-
-const hoverVariants = {
-  hover: { scale: 1.05, transition: { duration: 0.3 } },
-};
-
-const PricingSection = () => {
+const Pricing = () => {
   return (
-    <section className="bg-[#7152F3] text-white py-12 lg:py-20">
-      <div className="max-w-3xl mx-auto text-center px-6">
-        <motion.h2
-          className="text-3xl lg:text-4xl font-bold mb-4"
-          variants={textVariants}
-          initial="hidden"
-          animate="visible"
-        >
+    <section className="bg-[#2874F0] flex flex-col lg:flex-row items-center justify-center min-h-screen px-5 lg:px-20 py-10">
+      {/* Left Text Container */}
+      <div className="max-w-[500px] text-white space-y-5 lg:space-y-3 text-center lg:text-left mb-8 lg:mb-0 lg:mr-10">
+        <h1 className="font-montserrat font-semibold text-[28px] lg:text-[36px] leading-[36px] lg:leading-[48px] tracking-tight"
+          style={{ letterSpacing: '-1.2px' }}>
           Start Using OnboardingPro for Free
-        </motion.h2>
-        <motion.p
-          className="text-lg lg:text-xl mb-6"
-          variants={textVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          Enjoy full access to all features at no cost. Sign up now—pricing plans will be introduced soon.
-        </motion.p>
-        <motion.a
-          href="#"
-          className="inline-block bg-white text-[#7152F3] font-bold py-3 px-6 rounded-full shadow-lg hover:bg-gray-100 transition duration-300"
-          variants={buttonVariants}
-          initial="hidden"
-          animate="visible"
-          whileHover="hover"
-        >
-          Get Started for Free
-        </motion.a>
-        <motion.div
-          className="mt-8 text-sm text-gray-300"
-          variants={textVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
-          <p>Pricing plans will be introduced soon. No credit card required.</p>
-        </motion.div>
+        </h1>
+        <p className="font-montserrat text-[16px] lg:text-[19px] font-normal leading-[28px] lg:leading-[32px] tracking-tight"
+          style={{ letterSpacing: '-0.2px' }}>
+          Enjoy full access to all features at no cost. Sign up now—pricing
+          plans will be introduced soon.
+        </p>
+        {/* Call-to-Action */}
+        <button
+          className="bg-white text-[#2874F0] font-montserrat font-semibold text-[16px] lg:text-[17px] px-5 py-3 rounded-full mx-auto lg:mx-0"
+          style={{ letterSpacing: '-0.6px', width: '100%', maxWidth: '261px', height: 'auto' }}>
+          Get started for free →
+        </button>
+        <p className="font-montserrat text-[12px] lg:text-[14px] font-medium leading-[20px]">
+          Pricing plans will be introduced soon. No credit card required.
+        </p>
+      </div>
+
+      {/* Right Image Container */}
+      <div className="flex items-center justify-center">
+        <Image
+          src={PricingImg}
+          alt="Schedule Preview"
+          width={338}
+          height={520}
+          className="object-contain"
+        />
       </div>
     </section>
   );
 };
 
-export default PricingSection;
+export default Pricing;
