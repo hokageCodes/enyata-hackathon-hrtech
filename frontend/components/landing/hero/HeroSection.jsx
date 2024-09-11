@@ -28,7 +28,7 @@ const HeroSection = () => {
         </motion.p>
         <div className="flex flex-col lg:flex-row items-center lg:items-start space-y-4 lg:space-y-0 lg:space-x-4">
           <motion.a
-            href="#register"
+            href="/register"
             className="bg-[#88A52A] text-white font-semibold py-3 px-6 rounded-lg hover:bg-[#8bb636] transition"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
